@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flybondi - Challenge (Vanilla JS)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="card logo-card">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36'><circle cx='18' cy='18' r='16' fill='%2300d1b2'/></svg>" alt="logo" />
+        <div>
+          <h1>Flybondi</h1>
+        </div>
+      </div>
+    </header>
+
+    <section class="card controls">
+      <label class="small">Origen</label>
+      <select id="originSelect" class="input"></select>
+      <label class="small">Presupuesto (ida y vuelta)</label>
+      <input id="budgetInput" class="input" type="number" value="800" />
+      <label class="small">Filtrar por duración máxima (días)</label>
+      <input id="maxDays" class="input" type="number" placeholder="ej: 7" min="1" />
+      <label class="small">Ordenar por</label>
+      <select id="sortBy" class="input">
+        <option value="price">Menor precio</option>
+        <option value="duration">Menor duración</option>
+        <option value="availability">Mayor disponibilidad</option>
+      </select>
+      <button id="searchBtn" class="btn input">Buscar</button>
+    </section>
+
+    <section id="output" class="results"></section>
+
+    <footer>Instrucciones: seleccioná un origen, ajustá el presupuesto y hacé click en Buscar. 
+    El sistema busca combinaciones de ida y vuelta (ida fecha < vuelta fecha) cuyo precio total sea menor o igual al presupuesto.</footer>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
